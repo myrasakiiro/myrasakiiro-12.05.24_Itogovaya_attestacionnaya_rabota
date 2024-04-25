@@ -9,48 +9,5 @@
 
 
 
-void Main(string[] args)
-    {
-        // Примеры тестовых данных
-        string[][] tests = new string[][] {
-            new string[] {"Hello", "2", "world", ":-)"},
-            new string[] {"1234", "1567", "-2", "computer science"},
-            new string[] {"Russia", "Denmark", "Kazan"}
-        };
-
-        // Обработка тестовых данных и вывод результатов
-        foreach (string[] test in tests)
-        {
-            string[] result = FilterShortStrings(test);
-            Console.WriteLine("Исходный массив: [" + string.Join(", ", test) + "]");
-            Console.WriteLine("Новый массив: [" + string.Join(", ", result) + "]\n");
-        }
-    }
-    string[] FilterShortStrings(string[] strings)
-    {
-        int count = 0;
-        // Подсчитываем количество строк, удовлетворяющих условию
-        foreach (string str in strings)
-        {
-            if (str.Length <= 3)
-            {
-                count++;
-            }
-        }
-
-        // Создаем новый массив нужного размера
-        string[] result = new string[count];
-        int index = 0;
-        // Заполняем новый массив строками, удовлетворяющими условию
-        foreach (string str in strings)
-        {
-            if (str.Length <= 3)
-            {
-                result[index] = str;
-                index++;
-            }
-        }
-
-        return result;
-    }
-    Main();
+string[] array1 = {"Hello", "2", "world", ":-)"};
+string[] array2 = new string[array1.Length];
